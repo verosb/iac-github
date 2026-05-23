@@ -1,3 +1,4 @@
+#deploy
 name: Deploy EC2
 
 on:
@@ -21,8 +22,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
+
       - name: Deploy CloudFormation Stack
         run: |
           aws cloudformation deploy \
           --template-file templates/ec2.yaml \
-          --stack-name ec2-stack-clase
+          --stack-name ec2-stack-clase  
